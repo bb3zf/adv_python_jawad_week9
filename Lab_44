@@ -1,0 +1,15 @@
+import numpy as np
+
+def softmax_stable(x):
+    z = x - np.max(x)
+    exp_z = np.exp(z)
+    return exp_z / np.sum(exp_z)
+
+scores = np.array([2.0, 1.0, 0.1])
+probs = softmax_stable(scores)
+
+print("probabilities:")
+print(probs)
+
+print("sum of probabilities:")
+print(np.sum(probs))
