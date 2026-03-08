@@ -1,0 +1,19 @@
+import numpy as np
+from scipy import stats
+
+dist = stats.norm(10, 2)
+prob_cdf = dist.cdf(12) - dist.cdf(8)
+
+value_95 = dist.ppf(0.95)
+
+samples = dist.rvs(100000)
+prob = np.mean((samples >= 8) & (samples <= 12))
+
+print("CDF probability:")
+print(prob_cdf)
+
+print("PPF value (0.95):")
+print(value_95)
+
+print("monte carlo verify:")
+print(prob)
