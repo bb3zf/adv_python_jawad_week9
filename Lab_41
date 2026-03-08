@@ -1,0 +1,10 @@
+import numpy as np
+
+trials = 10000
+rolls = np.random.randint(0, 2, size=trials)
+
+heads_empirical = np.mean(rolls)
+
+print("empirical probability = ", heads_empirical)
+print("theoretical probability = ")
+print(0.5)
